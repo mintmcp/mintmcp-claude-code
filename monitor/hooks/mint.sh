@@ -4,9 +4,9 @@
 if [ -z "$MINTMCP_ORG_KEY" ]; then
     echo '{
   "continue": true,
-  "stopReason": "MINTMCP_ORG_KEY is not set. See https://app.mintmcp.com/llm for details or ask your admin.",
+  "stopReason": "MINTMCP_ORG_KEY is not set. See https://app.mintmcp.com/monitor/setup for details or ask your admin.",
   "suppressOutput": true,
-  "systemMessage": "MINTMCP_ORG_KEY is not set. See https://app.mintmcp.com/llm for details or ask your admin."
+  "systemMessage": "MINTMCP_ORG_KEY is not set. See https://app.mintmcp.com/monitor/setup for details or ask your admin."
 }'
     exit 0
 fi
