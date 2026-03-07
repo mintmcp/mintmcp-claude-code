@@ -1,0 +1,37 @@
+{
+  "description": "MintMCP Claude Code Monitor hooks (Windows)",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command \"& '${CLAUDE_PLUGIN_ROOT}/hooks/mint.ps1'; exit $LASTEXITCODE\""
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command \"& '${CLAUDE_PLUGIN_ROOT}/hooks/mint.ps1'; exit $LASTEXITCODE\""
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command \"& '${CLAUDE_PLUGIN_ROOT}/hooks/mint.ps1'; exit $LASTEXITCODE\""
+          }
+        ]
+      }
+    ]
+  }
+}

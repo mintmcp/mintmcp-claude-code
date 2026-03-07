@@ -34,6 +34,27 @@ in your Claude Code setup.
 
 The monitor plugin requires the `MINTMCP_ORG_KEY` environment variable to be set. If not configured, it will display a helpful message directing users to [https://app.mintmcp.com/monitor/setup](https://app.mintmcp.com/monitor/setup) for setup instructions.
 
+### Monitor Plugin (Windows)
+
+The `monitor-windows` plugin is the Windows equivalent of the `monitor` plugin, using PowerShell instead of shell scripts. It provides the same functionality:
+
+- **PreToolUse hooks**: Monitor tool usage before tool execution
+- **PostToolUse hooks**: Monitor tool usage after tool execution
+- **UserPromptSubmit hooks**: Monitor user prompts
+
+#### Installation
+
+```
+/plugin marketplace add mintmcp/mintmcp-claude-code
+/plugin install monitor-windows@mintmcp-claude-code
+```
+
+And visiting https://app.mintmcp.com/monitor/setup to configure the `MINTMCP_ORG_KEY` environment variable in your Claude Code setup.
+
+#### Configuration
+
+Same as the Unix monitor plugin — requires the `MINTMCP_ORG_KEY` environment variable. Optionally set `MINTMCP_USER` (defaults to `%USERNAME%`) and `MINTMCP_BASE_URL`.
+
 ## License
 
 Licensed under the Apache License, Version 2.0. See [LICENSE](LICENSE) for details.
