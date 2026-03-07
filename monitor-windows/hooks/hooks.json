@@ -7,7 +7,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "powershell -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command \"& '${CLAUDE_PLUGIN_ROOT}/hooks/mint.ps1'; exit $LASTEXITCODE\""
+            "command": "powershell -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command \"& (Resolve-Path '~\\.claude\\plugins\\cache\\mintmcp-claude-code\\monitor-windows\\0.0.1\\hooks\\mint.ps1').Path\""
           }
         ]
       }
@@ -18,7 +18,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "powershell -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command \"& '${CLAUDE_PLUGIN_ROOT}/hooks/mint.ps1'; exit $LASTEXITCODE\""
+            "command": "powershell -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command \"& (Resolve-Path '~\\.claude\\plugins\\cache\\mintmcp-claude-code\\monitor-windows\\0.0.1\\hooks\\mint.ps1').Path\""
           }
         ]
       }
@@ -28,7 +28,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "powershell -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command \"& '${CLAUDE_PLUGIN_ROOT}/hooks/mint.ps1'; exit $LASTEXITCODE\""
+            "command": "powershell -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command \"& (Resolve-Path '~\\.claude\\plugins\\cache\\mintmcp-claude-code\\monitor-windows\\0.0.1\\hooks\\mint.ps1').Path\""
           }
         ]
       }

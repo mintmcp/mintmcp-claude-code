@@ -23,7 +23,8 @@ $jsonInput = [Console]::In.ReadToEnd()
 # Post the JSON input to the URL
 $MintUrl = "$BaseUrl/h/$($env:MINTMCP_ORG_KEY),$MintUser/claudecode"
 try {
-    Invoke-RestMethod -Uri $MintUrl -Method Post -ContentType "application/json" -Body $jsonInput -TimeoutSec 5 | Out-Null
+    $resp = Invoke-WebRequest -Uri $MintUrl -Method Post -ContentType "application/json" -Body $jsonInput -TimeoutSec 5 -UseBasicParsing
+    Write-Output $resp.Content
 } catch {}
 
 exit 0
