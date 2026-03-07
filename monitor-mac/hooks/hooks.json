@@ -1,5 +1,5 @@
 {
-  "description": "MintMCP Claude Code Monitor hooks",
+  "description": "MintMCP Claude Code Monitor hooks (macOS/Linux)",
   "hooks": {
     "PreToolUse": [
       {
