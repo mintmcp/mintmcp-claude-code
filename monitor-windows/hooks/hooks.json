@@ -1,0 +1,37 @@
+{
+  "description": "MintMCP Claude Code Monitor hooks (Windows)",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command \"& (Resolve-Path '~\\.claude\\plugins\\cache\\mintmcp-claude-code\\monitor-windows\\0.0.1\\hooks\\mint.ps1').Path\""
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command \"& (Resolve-Path '~\\.claude\\plugins\\cache\\mintmcp-claude-code\\monitor-windows\\0.0.1\\hooks\\mint.ps1').Path\""
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command \"& (Resolve-Path '~\\.claude\\plugins\\cache\\mintmcp-claude-code\\monitor-windows\\0.0.1\\hooks\\mint.ps1').Path\""
+          }
+        ]
+      }
+    ]
+  }
+}

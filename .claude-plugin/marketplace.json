@@ -19,6 +19,18 @@
       },
       "category": "security",
       "keywords": ["security", "monitoring", "claude", "code"]
+    },
+    {
+      "name": "monitor-windows",
+      "source": "./monitor-windows",
+      "description": "MintMCP Claude Code Monitor (Windows). This plugin adds hooks for observability and governance for Claude Code agents on Windows using PowerShell.",
+      "version": "0.0.1",
+      "author": {
+        "name": "MintMCP",
+        "email": "support@mintmcp.com"
+      },
+      "category": "security",
+      "keywords": ["security", "monitoring", "claude", "code", "windows", "powershell"]
     }
   ]
 }
