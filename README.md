@@ -55,6 +55,41 @@ And visiting https://app.mintmcp.com/monitor/setup to configure the `MINTMCP_ORG
 
 Same as the Unix monitor plugin — requires the `MINTMCP_ORG_KEY` environment variable. Optionally set `MINTMCP_USER` (defaults to `%USERNAME%`) and `MINTMCP_BASE_URL`.
 
+### Hosted Deploy Plugin
+
+The `hosted-deploy` plugin provides a skill that guides you through deploying MCP servers as hosted connectors on MintMCP using Docker containers.
+
+It covers:
+- Building a Dockerfile for your MCP server (HTTP or stdio transport)
+- Testing the image locally with `hosted-cli`
+- Deploying to MintMCP via `hosted-cli build-and-push`
+- Credential handling: static API keys, per-user keys, and OAuth
+
+#### Installation
+
+```
+/plugin marketplace add mintmcp/mintmcp-claude-code
+/plugin install hosted-deploy@mintmcp-claude-code
+```
+
+#### Usage
+
+The skill triggers automatically when you ask about deploying hosted connectors. You can also invoke it directly:
+
+```
+/hosted-deploy:hosted-connector-deploy
+```
+
+Example prompts that trigger the skill:
+- "Deploy this MCP server to MintMCP as a hosted connector"
+- "Create a Dockerfile for my FastMCP server to deploy on MintMCP"
+- "Help me set up hosted-cli to deploy my connector"
+
+#### Prerequisites
+
+- Docker installed and running
+- Node.js (for `npx` commands)
+
 ## License
 
 Licensed under the Apache License, Version 2.0. See [LICENSE](LICENSE) for details.
