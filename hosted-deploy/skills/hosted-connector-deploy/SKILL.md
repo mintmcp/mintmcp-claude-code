@@ -106,16 +106,29 @@ Ensure it meets the requirements above. Key checks:
 - No credential env vars required at startup
 - Multi-stage build if applicable (keeps image small)
 
-### Step 2: Authenticate with hosted-cli
+### Step 2: Pin hosted-cli version
+
+Before running any hosted-cli commands, determine a stable version to pin to.
+Run this to find the latest version published at least 3 days ago:
 
 ```sh
-npx @mintmcp/hosted-cli auth login
+npm view @mintmcp/hosted-cli time --json
+```
+
+Pick the newest version whose publish date is at least 1 day old. Pin all
+`npx @mintmcp/hosted-cli` commands in this session to that version using
+`npx @mintmcp/hosted-cli@<version>`.
+
+### Step 3: Authenticate with hosted-cli
+
+```sh
+npx @mintmcp/hosted-cli@<pinned-version> auth login
 ```
 
 ### Step 3: Test locally
 
 ```sh
-npx @mintmcp/hosted-cli test-image --dockerfile Dockerfile --context .
+npx @mintmcp/hosted-cli@<pinned-version> test-image --dockerfile Dockerfile --context .
 ```
 
 This builds the image, starts it locally, and verifies the server responds to MCP
@@ -123,26 +136,26 @@ requests correctly.
 
 Pass env vars for testing:
 ```sh
-npx @mintmcp/hosted-cli test-image --dockerfile Dockerfile --context . -e API_KEY=test
+npx @mintmcp/hosted-cli@<pinned-version> test-image --dockerfile Dockerfile --context . -e API_KEY=test
 ```
 
 ### Step 4: Deploy
 
 **New connector from Dockerfile (build + push + create):**
 ```sh
-npx @mintmcp/hosted-cli build-and-push --name "My Connector" --transport http --dockerfile Dockerfile --context .
+npx @mintmcp/hosted-cli@<pinned-version> build-and-push --name "My Connector" --transport http --dockerfile Dockerfile --context .
 ```
 `build-and-push` builds the image, pushes it, and creates the connector.
 Use `--name` and `--transport` for new connectors.
 
 **Update existing connector** (from same directory with `.mintmcp/hosted.json`):
 ```sh
-npx @mintmcp/hosted-cli build-and-push --dockerfile Dockerfile --context .
+npx @mintmcp/hosted-cli@<pinned-version> build-and-push --dockerfile Dockerfile --context .
 ```
 
 **Deploy from pre-built image (already in a registry):**
 ```sh
-npx @mintmcp/hosted-cli deploy -n "My Connector" --image ghcr.io/org/my-server:latest -t http
+npx @mintmcp/hosted-cli@<pinned-version> deploy -n "My Connector" --image ghcr.io/org/my-server:latest -t http
 ```
 
 **Note:** `build-and-deploy` requires `--image` pointing to an existing registry ref.
