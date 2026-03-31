@@ -42,6 +42,5 @@ Deploy with `--transport stdio` and `--startup-command "python server.py"`.
 
 ## When to use stdio
 
-- Server only supports stdio and cannot be modified
-- Need per-user env without any server code changes
-- Prototyping / quick deployment of existing stdio servers
+- Server exclusively supports stdio (no HTTP transport available)
+- Prototyping / quick deployment of existing stdio-only servers

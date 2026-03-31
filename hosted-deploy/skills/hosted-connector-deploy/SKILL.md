@@ -9,9 +9,11 @@ Guide users through building, testing, and deploying Docker-based MCP servers on
 
 ## Decision Tree
 
-1. **Does the server support HTTP streamable transport?**
-   - Yes -> Happy path (HTTP on port 8000). Continue below.
-   - No (stdio only) -> See [references/stdio-transport.md](references/stdio-transport.md)
+1. **Transport: Use HTTP whenever the server supports it.**
+   - If the server has any HTTP streamable support -> use HTTP. Configure it to
+     serve at `/mcp` on port 8000. This is the happy path.
+   - Only fall back to stdio if the server exclusively supports stdio.
+     See [references/stdio-transport.md](references/stdio-transport.md)
 
 2. **Does the server need per-user credentials (API keys, tokens)?**
    - Yes -> See [references/per-user-env.md](references/per-user-env.md)
