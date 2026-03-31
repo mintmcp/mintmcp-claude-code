@@ -15,9 +15,19 @@ Guide users through building, testing, and deploying Docker-based MCP servers on
    - Only fall back to stdio if the server exclusively supports stdio.
      See [references/stdio-transport.md](references/stdio-transport.md)
 
-2. **Does the server need per-user credentials (API keys, tokens)?**
-   - Yes -> See [references/per-user-env.md](references/per-user-env.md)
-   - No -> Standard fixed env vars in Dockerfile or MintMCP config
+2. **How does the server take credentials?** Ask the user which applies:
+
+   **a) No credentials** -> No special handling. Proceed to step 3.
+
+   **b) API key / token** -> Ask how the server receives it (env var, header, etc.),
+   then ask: is this a single shared key for the whole org, or does each user
+   bring their own?
+   - **Shared key** -> Set it as a fixed env var in the Dockerfile or MintMCP
+     connector config. No special handling needed.
+   - **Per-user keys** -> See [references/per-user-env.md](references/per-user-env.md).
+     The server must handle credentials per-request and not require them at startup.
+
+   **c) OAuth** -> See [references/oauth.md](references/oauth.md).
 
 3. **Is there an existing Dockerfile?**
    - Yes -> Review it against the requirements below, then test and deploy
