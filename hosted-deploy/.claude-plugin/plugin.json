@@ -1,0 +1,9 @@
+{
+  "name": "hosted-deploy",
+  "description": "Deploy MCP servers as hosted connectors on MintMCP using Docker containers.",
+  "version": "0.0.1",
+  "author": {
+    "name": "MintMCP",
+    "email": "support@mintmcp.com"
+  }
+}
