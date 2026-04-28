@@ -1,0 +1,9 @@
+{
+  "name": "mint-mcp-builder",
+  "description": "Build remote MCP servers that wrap third-party REST APIs and publish them as linux/amd64 Docker images for the MintMCP hosted runtime.",
+  "version": "0.0.1",
+  "author": {
+    "name": "MintMCP",
+    "email": "support@mintmcp.com"
+  }
+}
