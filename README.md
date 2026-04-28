@@ -90,6 +90,30 @@ Example prompts that trigger the skill:
 - Docker installed and running
 - Node.js (for `npx` commands)
 
+### Mint MCP Builder Plugin
+
+The `mint-mcp-builder` plugin provides a skill that captures the recipe for shipping a new MCP server to the MintMCP hosted runtime. It covers TypeScript + streamable HTTP scaffolding, the split-auth model (per-request bearer token vs deployment env vars), Zod schema patterns, and the `linux/amd64` Docker build/push pipeline.
+
+#### Installation
+
+```
+/plugin marketplace add mintmcp/mintmcp-claude-code
+/plugin install mint-mcp-builder@mintmcp-claude-code
+```
+
+#### Usage
+
+The skill triggers automatically when you ask Claude to build an MCP server for a third-party API and mention MintMCP, or to build and push to the `mintmcp` Docker Hub namespace.
+
+Example prompts that trigger the skill:
+- "Build an MCP server for Stripe and host it on MintMCP"
+- "Wrap this REST API as an MCP server and push to mintmcp on Docker Hub"
+
+#### Prerequisites
+
+- Docker with buildx (for `linux/amd64` cross-builds)
+- Node.js 22+
+
 ## License
 
 Licensed under the Apache License, Version 2.0. See [LICENSE](LICENSE) for details.
