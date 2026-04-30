@@ -35,8 +35,8 @@
     {
       "name": "hosted-deploy",
       "source": "./hosted-deploy",
-      "description": "Deploy MCP servers as hosted connectors on MintMCP using Docker containers. Provides a skill for building Dockerfiles, testing locally, and deploying via hosted-cli.",
-      "version": "0.0.1",
+      "description": "DEPRECATED. Use MintMCP's Admin MCP for hosted connector deployment.",
+      "version": "0.0.2",
       "author": {
         "name": "MintMCP",
         "email": "support@mintmcp.com"
