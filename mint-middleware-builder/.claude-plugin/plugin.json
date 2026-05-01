@@ -1,0 +1,9 @@
+{
+  "name": "mint-middleware-builder",
+  "description": "Co-build and deploy custom MintMCP gateway middleware. Walks through discovering tool inputs, drafting QuickJS rules, testing via test_gateway_middleware, and saving via create_gateway_middleware.",
+  "version": "0.0.1",
+  "author": {
+    "name": "MintMCP",
+    "email": "support@mintmcp.com"
+  }
+}

@@ -114,6 +114,33 @@ Example prompts that trigger the skill:
 - Docker with buildx (for `linux/amd64` cross-builds)
 - Node.js 22+
 
+### Mint Middleware Builder Plugin
+
+The `mint-middleware-builder` plugin provides a skill that co-builds and deploys custom MintMCP gateway middleware — JavaScript rules that run in a sandboxed QuickJS runtime to allow, block, or mask MCP tool calls based on arguments or results. It covers the full flow: discovering tool inputs via the target MCP, drafting rules from templates (allowlist, blocklist, argument masking, result redaction, LLM-classified blocking), testing via `test_gateway_middleware`, and saving via `create_gateway_middleware`.
+
+#### Installation
+
+```
+/plugin marketplace add mintmcp/mintmcp-claude-code
+/plugin install mint-middleware-builder@mintmcp-claude-code
+```
+
+#### Usage
+
+The skill triggers automatically when you ask Claude to build a middleware, filter or restrict an MCP tool, or block calls based on arguments or results.
+
+Example prompts that trigger the skill:
+- "Build a middleware that restricts SharePoint to a specific drive"
+- "Filter Slack message-send tools to only allow #bo-test"
+- "Block destructive Linear actions on this gateway"
+- "Mask PII in tool results from the GitHub MCP"
+
+#### Prerequisites
+
+- The MintMCP Admin MCP connected (for create/test/update of middleware)
+- The target MCP server connected (e.g. SharePoint, Slack — needed to discover IDs the source UI may not expose)
+- Both can be connected at [app.mintmcp.com](https://app.mintmcp.com)
+
 ## License
 
 Licensed under the Apache License, Version 2.0. See [LICENSE](LICENSE) for details.
